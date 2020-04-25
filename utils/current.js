@@ -1,7 +1,8 @@
 const axios = require("axios");
 
 const current = async function (city, callback) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e7c3e011b0d69313f88f7feb194959b`;
+  const apiKey = process.env.OPEN_WEATHER_API_KEY;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
   try {
     const response = await axios.get(url);

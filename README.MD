@@ -2,6 +2,13 @@
 
 Este es el backend de la aplicacion Clima app, desarrollada como challenge para Telecom
 ***
+
+## Instalación
+Antes que nada deberá utilizarse el siguiente comando para la instalación de dependencias que utiliza la aplicación
+>`npm install`
+
+También deberá crearse un archivo .env y copiar el contenido de .env.example para obtener las variables de ambiente
+***
 ## Endpoints
 
 La aplicacion consta de 3 endpoints los cuales se acceden desde la ruta raiz /v1:
@@ -39,6 +46,7 @@ Las librerías utilizadas en el desarrollo de la api fueron:
 - Express - Utilizada para configurar el webserver y el manejo del protocolo REST
 - Axios - Utilizada para el consumo de las apis externas
 - Nodemon - Para hacer hot reloading, acelerando la velocidad en el desarrollo
+- Dotenv - Para el manejo de variables de ambiente
 - Mocha, Supertest, Should - Para conformar el framework de testeo
 
 
