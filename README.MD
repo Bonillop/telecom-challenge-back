@@ -2,7 +2,9 @@
 
 Este es el backend de la aplicacion Clima app, desarrollada como challenge para Telecom
 ***
-
+## Nota
+El frontend desarrollado para el uso de esta api puede encontrarse en el siguiente repositorio: https://github.com/Bonillop/telecom-challenge-front, es importante que el back se levante de manera local en el puerto 3000 para su correcto funcionamiento
+***
 ## Instalación
 Antes que nada deberá utilizarse el siguiente comando para la instalación de dependencias que utiliza la aplicación
 >`npm install`
@@ -48,5 +50,6 @@ Las librerías utilizadas en el desarrollo de la api fueron:
 - Nodemon - Para hacer hot reloading, acelerando la velocidad en el desarrollo
 - Dotenv - Para el manejo de variables de ambiente
 - Mocha, Supertest, Should - Para conformar el framework de testeo
-
-
+***
+## TODO
+Dockerización del proyecto entero (back y front) para facilitar el deploy
