@@ -30,7 +30,7 @@ describe("current test con parametro city invalido", () => {
       .expect(404)
       .expect('Content-Type', /json/)
       .end((err, res) => {
-        res.body.should.have.property("name").and.be.exactly("Error");
+        res.body.should.have.property("error").and.be.exactly("Ciudad no encontrada");
         done();
       })
   })

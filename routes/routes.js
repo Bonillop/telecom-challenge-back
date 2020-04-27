@@ -15,17 +15,15 @@ router.get("/location", function (req, res) {
 
 router.get("/current/:city?", function (req, res) {
   const city = req.params.city;
-  //City es un parámetro opcional. Devuelve los datos de ubicación city o la ubicación actual según
-  //ip-api y el estado del tiempo actual.
 
   if (!city) {
     location((error, data) => {
       if (error) {
-        return res.send(error);
+        return res.status(500).send({ error: "No se pudo obtener la ubicacion" });
       }
       current(data.city, (error, data) => {
         if (error) {
-          return res.send(error)
+          return res.status(500).send({ error: "No se pudo obtener el pronostico" })
         }
         return res.send(data)
       });
@@ -33,7 +31,7 @@ router.get("/current/:city?", function (req, res) {
   } else {
     current(city, (error, data) => {
       if (error) {
-        return res.send(error)
+        return res.status(400).send({ error: "Ciudad no encontrada" })
       }
       return res.send(data)
     });
@@ -43,17 +41,15 @@ router.get("/current/:city?", function (req, res) {
 
 router.get("/forecast/:city?", function (req, res) {
   const city = req.params.city;
-  //City es un parámetro opcional. Devuelve los datos de ubicación city o la ubicación actual según
-  //ip-api y el estado del tiempo a 5 dias.
 
   if (!city) {
     location((error, data) => {
       if (error) {
-        return res.send(error);
+        return res.status(500).send({ error: "No se pudo obtener la ubicacion" });
       }
       forecast(data.city, (error, data) => {
         if (error) {
-          return res.send(error)
+          return res.status(500).send({ error: "No se pudo obtener el pronostico" })
         }
         return res.send(data)
       });
@@ -61,7 +57,7 @@ router.get("/forecast/:city?", function (req, res) {
   } else {
     forecast(city, (error, data) => {
       if (error) {
-        return res.send(error)
+        return res.status(400).send({ error: "Ciudad no encontrada" })
       }
       return res.send(data)
     });
