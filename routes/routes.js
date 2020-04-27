@@ -64,4 +64,8 @@ router.get("/forecast/:city?", function (req, res) {
   }
 });
 
+router.get("*", function (req, res) {
+  return res.send("Invalid endpoint", 404);
+});
+
 module.exports = router;
